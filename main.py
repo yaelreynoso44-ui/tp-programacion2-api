@@ -55,7 +55,7 @@ def info():
     return {
         "materia": "Programación II",
         "proyecto": "API de Predicción con Machine Learning",
-        "descripcion": "API REST desarrollada con FastAPI para clasificación y regresión.",
+        "descripcion": "API REST desarrollada con FastAPI que permite realizar predicciones de clasificación y regresión utilizando modelos entrenados con Scikit-Learn.",
 
         "integrantes": [
             {
@@ -68,7 +68,8 @@ def info():
                 "dni": "37336018",
                 "email": "m.antonilli@hotmail.com.ar"
             },
-            {   "nombre": "Cesar Ezquer",
+            {
+                "nombre": "Cesar Ezquer",
                 "dni": "37310202",
                 "email": "cesar.ezquer23@gmail.com"
             }
@@ -78,6 +79,7 @@ def info():
             "nombre": "Titanic Survival Predictor",
             "tipo": "Clasificación",
             "dataset": "Titanic",
+            "descripcion": "Predice si un pasajero sobrevivirá.",
             "endpoint": "/modelo1"
         },
 
@@ -85,7 +87,36 @@ def info():
             "nombre": "California Housing Predictor",
             "tipo": "Regresión",
             "dataset": "California Housing",
+            "descripcion": "Estima el valor de una vivienda.",
             "endpoint": "/modelo2"
+        },
+
+        "uso_endpoints": {
+            "/modelo1": {
+                "metodo": "POST",
+                "descripcion": "Realiza una predicción de clasificación.",
+                "ejemplo_body": {
+                    "pclass": 3,
+                    "sex": "female",
+                    "age": 22,
+                    "fare": 7.25
+                }
+            },
+
+            "/modelo2": {
+                "metodo": "POST",
+                "descripcion": "Realiza una predicción de regresión.",
+                "ejemplo_body": {
+                    "MedInc": 5.0,
+                    "HouseAge": 20,
+                    "AveRooms": 6.0,
+                    "AveBedrms": 1.0,
+                    "Population": 1000,
+                    "AveOccup": 3.0,
+                    "Latitude": 34.0,
+                    "Longitude": -118.0
+                }
+            }
         }
     }
 
